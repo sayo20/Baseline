@@ -1,0 +1,48 @@
+epochs:
+  desc: Number of epochs to train over
+  value: 60
+batch_size:
+  desc: Size of each mini-batch
+  value: 32
+lr:
+  desc: We use LR decay that starts with this value
+  value: 0.00001 # Had used 0.01 as scratch
+workers:
+  desc: number of pytorch workers for data loading
+  value: 4
+Experiment:
+  desc: training baseline with either unilateral ipd or bi-lateral ipd
+  value: 0 #means uni and 1 means bi
+device:
+  desc: cuda or GPU
+  value: "cuda"
+CUDA_VISIBLE_DEVICES:
+  desc: says which gpu number to use
+  value: "8"
+Input_lps:
+  desc: shape of the input
+  value: 257
+Label_lps:
+  desc: shape of Label_uni
+  value: 257
+Number_of_layers:
+  desc: number of lstm Number_of_layers
+  value: 1
+Number_of_nodes:
+  desc: Number of nodes in the lstm layers and fully connected layers
+  value: 128
+Weight_decay:
+  desc: value for l2 regularizers
+  value: 0.01
+Patience:
+  desc: Early stopping patience
+  value: 3
+Experiment_des:
+  desc: experiment details
+  value: "Estimate1: one layer lstm using just first channel of LPS"
+Best_epoch:
+  desc: best epoch from the training based on validation loss
+  value: "Spectral_experiments/spectra-LPS-V2-Ex1-epoch=10-val_loss=324363424.00.ckpt"
+
+
+  

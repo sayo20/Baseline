@@ -1,0 +1,55 @@
+epochs:
+  desc: Number of epochs to train over
+  value: 60
+batch_size_range:
+  desc: Size of each mini-batch
+  value: [16,64,16]
+lr:
+  desc: We use LR decay that starts with this value
+  value: [1e-5, 1e-1] # Had used 0.01 as scratch
+workers:
+  desc: number of pytorch workers for data loading
+  value: 4
+Experiment:
+  desc: training baseline with either unilateral ipd or bi-lateral ipd
+  value: 1 #means uni and 1 means bi
+device:
+  desc: cuda or GPU
+  value: "cuda"
+CUDA_VISIBLE_DEVICES:
+  desc: says which gpu number to use
+  value: "8"
+Input_bi:
+  desc: shape of the input 2570
+  value: 257
+Label_bi:
+  desc: shape of Label_bi
+  value: 257
+Number_of_layers:
+  desc: number of lstm Number_of_layers
+  value: [1,3]
+optimizers:
+  desc: range of optimizer to use
+  value: ["Adam","AdamW", "RMSprop", "SGD"]
+Number_of_nodes:
+  desc: Number of nodes in the lstm layers and fully connected layers
+  value: [128, 512,128]
+Weight_decay:
+  desc: value for l2 regularizers
+  value: [1e-5, 1e-1]
+Patience:
+  desc: Early stopping patience
+  value: 3
+n_trials:
+  desc: Number of trials to run in searching for the right params
+  value: 10
+save_path:
+  desc: where we save best optuna params
+  value: "Bi_experiments-optim/bestParams_bi.pt"
+Experiment_des:
+  desc: experiment details
+  value: "Hyper parameter tuning_bi"
+Best_epoch:
+  desc: best epoch from the training based on validation loss
+  value: "Bi_experiments/bi-GU-LPS-V2-Ex2-epoch=03-val_loss=324940576.00.ckpt"
+
